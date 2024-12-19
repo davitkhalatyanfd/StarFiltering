@@ -70,7 +70,7 @@ def write_to_csv(stars, file_name, ra, dec):
 
 def main():
     # Input parameters
-    tsv_file = "337.all.tsv"
+    tsv_file = "cleaned_stars.tsv"
     ra = float(input("Enter RA: "))
     dec = float(input("Enter DEC: "))
     fov_h = float(input("Enter FOV Horizontal (fov_h): "))
