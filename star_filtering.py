@@ -38,8 +38,22 @@ def filter_stars(stars, ra, dec, fov_h, fov_v):
     return filtered_stars
 
 def sort_stars_by_brightness(stars):
-    """Sorts the stars by their distance from the given RA and DEC."""
-    return sorted(stars, key=lambda x: x["brightness"])
+    """
+     Sorts a list of stars in ascending order by their brightness using Bubble Sort.
+
+     Parameters:
+         stars (list): A list of dictionaries, each representing a star with a 'brightness' key.
+
+     Returns:
+         list: The sorted list of stars.
+     """
+    n = len(stars)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if stars[j]["brightness"] > stars[j + 1]["brightness"]:
+                # Swap if the current star is dimmer than the next star
+                stars[j], stars[j + 1] = stars[j + 1], stars[j]
+    return stars
 
 def top_stars(stars, n):
     """Returns first N entries of a sorted stars list."""
